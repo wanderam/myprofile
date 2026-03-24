@@ -154,11 +154,48 @@
         .link-card:nth-child(2) { animation-delay: 0.2s; }
         .link-card:nth-child(3) { animation-delay: 0.3s; }
         .link-card:nth-child(4) { animation-delay: 0.4s; }
+
+
+        /* Estilização do botão de retorno ao topo da pag. */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #00ff88;
+            color: #121212;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: 0.3s;
+            z-index: 1000;       /* Garantir que fique acima de tudo */
+            opacity: 0;          /* Começa invisível */
+            visibility: hidden;  /* Fica 'desativado' para cliques */
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: scale(1.1);
+            background-color: #ffffff;
+        }
+
+        /* Suavizar o movimento de subida */
+        html {
+            scroll-behavior: smooth;
+        }
         
               
     </style>
 </head>
-<body>
+<body id="inicio">
 
     <img src="imgs/profile_photo2.JPG" alt="Foto de Perfil" class="profile-pic">
 
@@ -309,6 +346,29 @@
         </a>
 
     </div>
+
+        <!-- Botão para retornar ao topo da página -->
+        <a href="#inicio" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+
+
+        <script>
+            // Selecionar o botão no HTML
+            const btnVoltarAoTopo = document.querySelector('.back-to-top');
+
+            // Percebendo o evento de rolagem (scroll) da janela
+            window.addEventListener('scroll', function() {
+                // Se a rolagem passar de 300 pixels, adiciona a classe 'active'
+                if (window.scrollY > 300) {
+                    btnVoltarAoTopo.classList.add('active');
+                } else {
+                    // Caso contrário, remove a classe
+                    btnVoltarAoTopo.classList.remove('active')
+                }
+            });
+
+        </script>
     
 </body>
 </html>
