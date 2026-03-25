@@ -1,3 +1,6 @@
+<!-- Link p/ Font Awesome: https://fontawesome.com/icons -->
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -38,6 +41,47 @@
             font-size: 0.9rem;
             color: #aaaaaa;
             margin-bottom: 30px;
+        }
+
+        /* Container para as etiquetas ficarem lado a lado */
+        .skills-container {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-wrap: wrap;  /* Faz pular a linha se não couber */
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* Estilo individual de cada etiqueta */
+        .skill-badge {
+            background-color: #252525;
+            color: #00ff88;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #333;
+            transition: 0.3s;
+            cursor: default;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .skill-badge:hover {
+            background-color: #00ff88;
+            color: #121212;
+            border-color: #00ff88;
+        }
+
+        /* Título da seção de skills */
+        .section-title {
+            font-size: 0.9rem;
+            color: #aaaaaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
         }
 
         /* Container de links */
@@ -212,6 +256,16 @@
         Busca oportunidades para aplicar conhecimento técnico e visão estratégica em empresas inovadoras
         voltadas à agricultura digital, meio ambiente ou análise territorial.
     </p>
+
+    <!-- Etiquetas de skills -->
+    <h2 class="section-title">Ferramentas & Tecnologias</h2>
+    <div class="skills-container">
+        <span class="skill-badge"><i class="fas fa-globe-americas"></i> QGIS</span>
+        <span class="skill-badge"><i class="fas fa-water"></i> SWAT</span>
+        <span class="skill-badge"><i class="fab fa-python"></i> Python</span>
+        <span class="skill-badge"><i class="fas fa-file-excel"></i> Pacote Office</span>
+        <span class="skill-badge"><i class="fas fa-code-branch"></i> Git</span>
+    </div>
 
 
     <!-- div para os botões com links para páginas pessoais -->
